@@ -1,0 +1,29 @@
+﻿<div>
+<div class="datePickWrapper">
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="с" [formControl]="date1" 
+		(dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event);"
+		[max]="dateTo">
+  <mat-datepicker-toggle matSuffix [for]="picker">
+	<mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>	
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker1" placeholder="по" [formControl]="date2"
+		(dateInput)="addEvent1('input', $event)" (dateChange)="addEvent1('change', $event);"
+		[min]="dateFrom">
+  <mat-datepicker-toggle matSuffix [for]="picker1">
+	<mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>	
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+<div class="fixDatesWrapper">
+	<span (click)="setYesterday()">Вчера</span>
+	<span (click)="setToday()">Сегодня</span>
+	<span (click)="setTwoWeeks()">2 недели</span>
+	<span (click)="setMonth()">Месяц</span>
+	<span (click)="setAll()">Все</span>
+</div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+﻿<mc-dates [date-from]="ctrl.date1" 
+		  [date-to]='ctrl.date2' 
+		  (mcchange1)="changeDates1($event)"
+		  (mcchange2)="changeDates2($event)"></mc-dates>
+<div>
+  	<label>Дата 1</label>
+	<input (keyup)="onKey($event)" [value]="ctrl.date1">            
+</div>
+<div>
+  	<label>Дата 2</label>
+	<input (keyup)="onKey1($event)" [value]="ctrl.date2">	
+</div>
+
+
